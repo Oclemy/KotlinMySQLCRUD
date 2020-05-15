@@ -8,9 +8,9 @@ import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.NavUtils
+import info.camposha.kotlinmysqlcrud.R
 import info.camposha.kotlinmysqlcrud.helpers.Utils
 import info.camposha.kotlinmysqlcrud.helpers.Utils.showInfoDialog
-import info.camposha.kotlinmysqlcrud.R
 import info.camposha.kotlinmysqlcrud.retrofit.ResponseModel
 import info.camposha.kotlinmysqlcrud.retrofit.RestApi
 import info.camposha.kotlinmysqlcrud.retrofit.Scientist
@@ -56,16 +56,16 @@ class CRUDActivity : AppCompatActivity() {
             galaxy = galaxyTxt!!.text.toString()
             star = starTxt!!.text.toString()
             if (dobTxt!!.date != null) {
-               
-				dob = dobTxt!!.format.format(dobTxt!!.date)
+
+                dob = dobTxt!!.format.format(dobTxt!!.date)
             } else {
                 dobTxt!!.error = "Invalid Date"
                 dobTxt!!.requestFocus()
                 return
             }
             if (dodTxt!!.date != null) {
-                
-				died = dobTxt!!.format.format(dodTxt!!.date)
+
+                died = dobTxt!!.format.format(dodTxt!!.date)
             } else {
                 dodTxt!!.error = "Invalid Date"
                 dodTxt!!.requestFocus()
@@ -83,7 +83,7 @@ class CRUDActivity : AppCompatActivity() {
                     call: Call<ResponseModel?>?,
                     response: Response<ResponseModel?>?
                 ) {
-                    var myResponseCode: String = ""
+                    var myResponseCode = ""
                     if (response?.body() != null) {
                         myResponseCode = response.body()!!.code!!
                     }
@@ -346,9 +346,9 @@ class CRUDActivity : AppCompatActivity() {
      */
     override fun onResume() {
         super.onResume()
-        val o: Scientist? = Utils.receiveScientist(intent, c)
-        if (o != null) {
-            receivedScientist = o
+        val s: Scientist? = Utils.receiveScientist(intent, c)
+        if (s != null) {
+            receivedScientist = s
             id = receivedScientist!!.id
             nameTxt.setText(receivedScientist!!.name)
             descriptionTxt.setText(receivedScientist!!.description)
