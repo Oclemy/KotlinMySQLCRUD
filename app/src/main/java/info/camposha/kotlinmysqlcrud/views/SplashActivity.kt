@@ -31,7 +31,7 @@ class SplashActivity : AppCompatActivity() {
         val t: Thread = object : Thread() {
             override fun run() {
                 try {
-                    sleep(2000)
+                    sleep(1000)
                     Utils.openActivity(this@SplashActivity, DashboardActivity::class.java)
                     finish()
                     super.run()
