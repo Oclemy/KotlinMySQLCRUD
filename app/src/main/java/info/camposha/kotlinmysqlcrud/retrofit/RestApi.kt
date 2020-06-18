@@ -7,9 +7,6 @@ import retrofit2.http.GET
 import retrofit2.http.POST
 
 /**
- * Let's define our imports
- */
-/**
  * Let's Create an interface
  */
 interface RestApi {

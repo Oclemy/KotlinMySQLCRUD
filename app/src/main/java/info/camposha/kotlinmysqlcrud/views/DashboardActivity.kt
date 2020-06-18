@@ -4,8 +4,8 @@ import android.content.Context
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import info.camposha.kotlinmysqlcrud.helpers.Utils
 import info.camposha.kotlinmysqlcrud.R
+import info.camposha.kotlinmysqlcrud.helpers.Utils
 import io.github.inflationx.viewpump.ViewPumpContextWrapper
 import kotlinx.android.synthetic.main.activity_dashboard.*
 
@@ -60,3 +60,4 @@ class DashboardActivity : AppCompatActivity() {
         initializeWidgets()
     }
 }
+//end

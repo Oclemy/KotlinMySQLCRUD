@@ -4,8 +4,8 @@ import android.content.Context
 import android.os.Bundle
 import android.view.animation.AnimationUtils
 import androidx.appcompat.app.AppCompatActivity
-import info.camposha.kotlinmysqlcrud.helpers.Utils
 import info.camposha.kotlinmysqlcrud.R
+import info.camposha.kotlinmysqlcrud.helpers.Utils
 import io.github.inflationx.viewpump.ViewPumpContextWrapper
 import kotlinx.android.synthetic.main.activity_splash.*
 
@@ -60,3 +60,4 @@ class SplashActivity : AppCompatActivity() {
         goToDashboard()
     }
 }
+//end

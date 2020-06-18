@@ -7,9 +7,6 @@ import com.google.gson.annotations.SerializedName
  */
 class ResponseModel {
     /**
-     * Generate Getter and Setters
-     */
-    /**
      * Our ResponseModel attributes
      */
     @SerializedName("result")

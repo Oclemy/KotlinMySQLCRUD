@@ -23,15 +23,17 @@
         android:textAlignment="center"
         android:textColor="@color/colorTitleColor"
         android:textSize="24sp"
+        android:layout_gravity="center_horizontal"
         android:textStyle="bold" />
 
     <TextView
         android:id="@+id/subTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Watch Great Courses in Udemy in HD"
+        android:layout_gravity="center_horizontal"
         android:textAlignment="center"
         android:textColor="@color/colorTitleColor"
+        android:text="Watch Great Courses in HD"
         android:textSize="18sp" />
 
 </LinearLayout>

@@ -6,8 +6,8 @@ import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.NavUtils
-import info.camposha.kotlinmysqlcrud.helpers.Utils
 import info.camposha.kotlinmysqlcrud.R
+import info.camposha.kotlinmysqlcrud.helpers.Utils
 import info.camposha.kotlinmysqlcrud.retrofit.Scientist
 import io.github.inflationx.viewpump.ViewPumpContextWrapper
 import kotlinx.android.synthetic.main.activity_detail.*
@@ -90,3 +90,4 @@ class DetailActivity : AppCompatActivity() {
         }
     }
 }
+//end

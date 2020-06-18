@@ -11,10 +11,10 @@ import android.widget.SearchView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import info.camposha.kotlinmysqlcrud.R
 import info.camposha.kotlinmysqlcrud.helpers.MyAdapter
 import info.camposha.kotlinmysqlcrud.helpers.Utils
 import info.camposha.kotlinmysqlcrud.helpers.Utils.showInfoDialog
-import info.camposha.kotlinmysqlcrud.R
 import info.camposha.kotlinmysqlcrud.retrofit.ResponseModel
 import info.camposha.kotlinmysqlcrud.retrofit.RestApi
 import info.camposha.kotlinmysqlcrud.retrofit.Scientist
@@ -207,3 +207,4 @@ class ScientistsActivity : AppCompatActivity(),
         retrieveAndFillRecyclerView("GET_PAGINATED", "", "0", "7")
     }
 }
+//end

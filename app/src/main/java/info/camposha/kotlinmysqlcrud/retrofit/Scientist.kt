@@ -11,9 +11,6 @@ import java.io.Serializable
  */
 class Scientist : Serializable {
     /**
-     * Let's now come define our getter and setter methods.
-     */
-    /**
      * Let' now come define instance fields for this class. We decorate them with
      * @SerializedName
      * attribute. Through this we are specifying the keys in our json data.
@@ -39,7 +36,5 @@ class Scientist : Serializable {
     @SerializedName("died")
     var died: String? = ""
 
-    override fun toString(): String {
-        return name!!
-    }
+
 }
