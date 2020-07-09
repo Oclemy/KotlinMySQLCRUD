@@ -36,5 +36,7 @@ class Scientist : Serializable {
     @SerializedName("died")
     var died: String? = ""
 
-
 }
+//end
+
+
