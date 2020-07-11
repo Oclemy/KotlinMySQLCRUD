@@ -29,7 +29,7 @@ object Utils {
      * Let's define some Constants
      */
     //supply your ip address. Type ipconfig while connected to internet to get your
-    //ip address in cmd. Watch video for more details.
+    //ip address in cmd.
     //private  static  final String base_url = "http://192.168.43.91/PHP/scientists/";
     private const val base_url = "https://camposha.info/PHP/scientists/"
 
@@ -189,7 +189,7 @@ object Utils {
     }
 
     /**
-     * This method will allow us send a serialized scientist objec  to a specified
+     * This method will allow us send a serialized scientist object  to a specified
      * activity
      */
     fun sendScientistToActivity(
@@ -214,3 +214,4 @@ object Utils {
     }
 }
 //end
+

@@ -19,3 +19,4 @@ class ResponseModel {
     var message: String? = "UNKNOWN MESSAGE"
 
 }
+//end

@@ -23,9 +23,18 @@ import java.util.*
  * 4. Listen to click events of recyclerview item and pass the clicked item to recyclerview
  */
 class MyAdapter(private val c: Context, scientists: ArrayList<Scientist>) : RecyclerView.Adapter<MyAdapter.ViewHolder>() {
+
     private val mMaterialColors: IntArray
     private val scientists: List<Scientist>
     var searchString = ""
+
+    /**
+    Create an ItemClickListener interface
+     */
+    interface ItemClickListener {
+        fun onItemClick(pos: Int)
+    }
+
 
     /**
      * Our ViewHolder class. It's responsibilities include:
@@ -135,13 +144,13 @@ class MyAdapter(private val c: Context, scientists: ArrayList<Scientist>) : Recy
         })
     }
 
+    /**
+    The number of items to bind
+     */
     override fun getItemCount(): Int {
         return scientists.size
     }
 
-    interface ItemClickListener {
-        fun onItemClick(pos: Int)
-    }
 
     /**
      * Our MyAdapter's costructor
@@ -151,3 +160,4 @@ class MyAdapter(private val c: Context, scientists: ArrayList<Scientist>) : Recy
         mMaterialColors = c.resources.getIntArray(R.array.colors)
     }
 }
+//end

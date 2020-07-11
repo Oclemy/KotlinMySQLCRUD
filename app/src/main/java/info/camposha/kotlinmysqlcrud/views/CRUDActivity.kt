@@ -29,7 +29,7 @@ class CRUDActivity : AppCompatActivity() {
     private val c: Context = this@CRUDActivity
 
     /**
-     * Let's reference our widgets
+     * Let's initialize our widgets
      */
     private fun initializeWidgets() {
         mProgressBarSave.isIndeterminate = true
@@ -87,35 +87,36 @@ class CRUDActivity : AppCompatActivity() {
                     if (response?.body() != null) {
                         myResponseCode = response.body()!!.code!!
                     }
-                    if (myResponseCode == "1") {
-                        Utils.show(
-                            c, """SUCCESS:
- 1. Data Inserted Successfully.
- 2. ResponseCode: $myResponseCode"""
-                        )
-                        Utils.openActivity(c, ScientistsActivity::class.java)
-                    } else if (myResponseCode.equals("2", ignoreCase = true)) {
-                        showInfoDialog(
-                            this@CRUDActivity, "UNSUCCESSFUL",
-                            """However Good Response.
- 1. CONNECTION TO SERVER WAS SUCCESSFUL
- 2. WE ATTEMPTED POSTING DATA BUT ENCOUNTERED ResponseCode: $myResponseCode
- 3. Most probably the problem is with your PHP Code."""
-                        )
-                    } else if (myResponseCode.equals("3", ignoreCase = true)) {
-                        showInfoDialog(
-                            this@CRUDActivity,
-                            "NO MYSQL CONNECTION",
-                            "Your PHP Code is unable to connect to mysql database. Make sure you have supplied correct database credentials."
-                        )
+                    when {
+                        myResponseCode == "1" -> {
+                            Utils.show(
+                                c, """SUCCESS:
+                 1. Data Inserted Successfully.
+                 2. ResponseCode: $myResponseCode"""
+                            )
+                            Utils.openActivity(c, ScientistsActivity::class.java)
+                        }
+                        myResponseCode.equals("2", ignoreCase = true) -> {
+                            showInfoDialog(
+                                this@CRUDActivity, "UNSUCCESSFUL",
+                                """However Good Response.
+                 1. CONNECTION TO SERVER WAS SUCCESSFUL
+                 2. WE ATTEMPTED POSTING DATA BUT ENCOUNTERED ResponseCode: $myResponseCode
+                 3. Most probably the problem is with your PHP Code."""
+                            )
+                        }
+                        myResponseCode.equals("3", ignoreCase = true) -> {
+                            showInfoDialog(
+                                this@CRUDActivity,
+                                "NO MYSQL CONNECTION",
+                                "Your PHP Code is unable to connect to mysql database. Make sure you have supplied correct database credentials."
+                            )
+                        }
                     }
                     Utils.hideProgressBar(mProgressBarSave)
                 }
 
-                override fun onFailure(
-                    call: Call<ResponseModel?>?,
-                    t: Throwable
-                ) {
+                override fun onFailure(call: Call<ResponseModel?>?, t: Throwable) {
                     Log.d("RETROFIT", "ERROR: " + t.message)
                     Utils.hideProgressBar(mProgressBarSave)
                     showInfoDialog(
