@@ -7,3 +7,5 @@ This is a project you can use as a template if you are beginning Kotlin Retrofit
 ## Demo
 
 Here is the demo of the project
+
+![Kotlin MySQL Retrofit CRUD](demo_kotlin_retrofit_crud.gif)
